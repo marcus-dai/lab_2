@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        sh 'mvn clean compile'
+        sh 'mvn clean compile && mvn exec:java -Dexec.mainClass="org.example.Main"'
       }
     }
   }
